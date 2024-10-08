@@ -1,0 +1,89 @@
+/******************** CSS Vertical Tabs *******************
+ ******************* Author: Asif Mughal ******************/
+
+* {margin: 0; padding: 0; }
+
+body{
+  font-family: 'Montserrat', sans-serif;
+}
+p{
+    line-height: 1.5;
+    padding: 10px;
+    text-indent: 20px;
+}
+img{
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 620px;
+    margin: 5px auto;
+
+}
+
+.tabs-container{
+   position: relative;
+   background: #02174f;
+   width: 120px;
+   height: 100vh;
+   float: left;
+   z-index: 20;
+
+}
+/* tabs names */
+.tabs-container label{
+   position: relative;
+   padding: 10px;
+   border-bottom: 1px solid rgba(222, 215, 215, 0.1);
+   display: block;
+   font-size: 13px;
+   color: #fff;
+   cursor: pointer;
+   user-select: none;
+}
+
+/* Hover effect on tabs names */
+.tabs-container label:hover{
+  background: rgba(237, 88, 88, 0.2);
+
+}
+/* Content area for tabs */
+.tab-content{
+   position: relative;
+   background: #ee88ad;
+   width: calc(100% - 120px);
+   min-height: 100vh;
+   padding: 15px;
+   float: left;
+   box-sizing: border-box;
+   z-index: 25;
+   display: none;
+}
+
+.tab-content:after{
+   content: "";
+   clear: both;
+
+}
+ /* Hide input radio from users */
+input[name="tab"]{
+  display: none;
+}
+ /* Show tab when input checked */
+input[name="tab"]:checked + .tab-content{
+    display: block;
+  animation: slide 0.5s forwards;
+
+}
+
+/* Slide animation for tab contents */
+@keyframes slide{
+    from{
+        left: -100%;
+        opacity: 0;
+    }
+    to{
+        left: 0;
+        opacity: 1;
+    }
+
+}
